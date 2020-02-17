@@ -38,7 +38,7 @@ public class LookAtClickPoint : MonoBehaviour
         {
             RaycastHit hit;
 
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 5))
             {
                 transform.LookAt(hit.point);
             }  
