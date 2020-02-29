@@ -12,7 +12,7 @@ public class LeadTurret : MonoBehaviour
     public float leadAmount = .5f;
 
     private Transform bulletSpawn;
-    
+     //bn
 
     // Start is called before the first frame update
     void Start()
