@@ -28,6 +28,7 @@ using UnityEngine;
          {
              ResetPlayer();
              dead = false;
+             health = 50;
          }
      }
      public void ResetPlayer()

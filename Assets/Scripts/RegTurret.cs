@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeadTurret : MonoBehaviour
+public class RegTurret : MonoBehaviour
 {
     public Rigidbody target;
 
-    public float bulletSpeed = 30f, fireInterval = 1f;
-
-    [Range(0,1)]
-    public float leadAmount = .5f;
+    public float bulletSpeed = 30f, fireInterval = 0.75f;
 
     private Transform bulletSpawn;
      //bn
@@ -25,7 +22,7 @@ public class LeadTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.LookAt(target.transform.position + (target.velocity * leadAmount));
+        this.transform.LookAt(target.transform.position);
         Debug.DrawRay(bulletSpawn.position, bulletSpawn.forward * 50, Color.blue);
     }
 
@@ -43,22 +40,4 @@ public class LeadTurret : MonoBehaviour
             yield return new WaitForSeconds(fireInterval);
         }
     }
-
-
-
-
-
-    /*IEnumerator LookAtMousePoint()
-    {
-        while(true)
-        {
-            RaycastHit hit;
-
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 5))
-            {
-                transform.LookAt(hit.point);
-            }  
-            yield return new WaitForSeconds(interval);
-        }
-    }*/
 }
