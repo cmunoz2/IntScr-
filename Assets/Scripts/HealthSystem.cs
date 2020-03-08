@@ -43,4 +43,12 @@ using UnityEngine;
             health -= damage;
         }
     }
+
+    void OnCollision(Collision other)
+    {
+        if(health < 80 && other.gameObject.name == "health")
+        {
+            health += damage;
+        }
+    }
  }
